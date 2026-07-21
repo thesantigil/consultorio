@@ -166,3 +166,28 @@ function mostrarResumen(){
 renderEspecialidades();
 renderFechas();
 renderSlots();
+
+// ============ Tema claro / oscuro ============
+const themeToggle = document.getElementById("theme-toggle");
+const html = document.documentElement;
+
+function actualizarBotonTema(){
+  const esOscuro = html.getAttribute("data-theme") === "oscuro";
+  themeToggle.setAttribute("aria-pressed", String(esOscuro));
+  themeToggle.setAttribute("aria-label", esOscuro ? "Cambiar a tema claro" : "Cambiar a tema oscuro");
+  themeToggle.title = esOscuro ? "Tema claro" : "Tema oscuro";
+}
+
+themeToggle.addEventListener("click", () => {
+  const esOscuro = html.getAttribute("data-theme") === "oscuro";
+  if(esOscuro){
+    html.removeAttribute("data-theme");
+    localStorage.setItem("sonria-tema", "claro");
+  } else {
+    html.setAttribute("data-theme", "oscuro");
+    localStorage.setItem("sonria-tema", "oscuro");
+  }
+  actualizarBotonTema();
+});
+
+actualizarBotonTema();
