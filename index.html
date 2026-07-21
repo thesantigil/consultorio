@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SONRÍA — Consultorio odontológico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="#top"><span class="logo-dot"></span>Sonría</a>
+    <nav class="main-nav">
+      <a href="#especialidades">Especialidades</a>
+      <a href="#turnos">Turnos</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn-solid header-cta" href="#turnos">Pedir turno</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="kicker">Consultorio odontológico · San Carlos de Bolívar</p>
+        <h1 class="hero-title">Tu sonrisa,<br>bien cuidada.</h1>
+        <p class="hero-sub">Odontología general, estética y ortodoncia con equipamiento actualizado y turnos puntuales.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#turnos">Pedir un turno</a>
+          <a class="btn btn-line" href="#especialidades">Ver especialidades</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>18</strong><span>años de trayectoria</span></div>
+          <div class="stat"><strong>+6.000</strong><span>pacientes atendidos</span></div>
+          <div class="stat"><strong>4.9★</strong><span>satisfacción</span></div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&q=75&auto=format&fit=crop" alt="Consultorio odontológico moderno">
+      </div>
+    </div>
+  </section>
+
+  <section class="especialidades" id="especialidades">
+    <div class="section-head">
+      <p class="kicker">Especialidades</p>
+      <h2>Atención completa, en un solo lugar.</h2>
+    </div>
+    <div class="spec-grid">
+      <article class="spec-card">
+        <div class="spec-icon" aria-hidden="true">🦷</div>
+        <h3>Odontología general</h3>
+        <p>Controles, limpiezas y tratamientos preventivos para toda la familia.</p>
+      </article>
+      <article class="spec-card">
+        <div class="spec-icon" aria-hidden="true">✨</div>
+        <h3>Estética dental</h3>
+        <p>Blanqueamiento, carillas y diseño de sonrisa a medida.</p>
+      </article>
+      <article class="spec-card">
+        <div class="spec-icon" aria-hidden="true">📐</div>
+        <h3>Ortodoncia</h3>
+        <p>Brackets tradicionales y alineadores estéticos para todas las edades.</p>
+      </article>
+      <article class="spec-card">
+        <div class="spec-icon" aria-hidden="true">🩺</div>
+        <h3>Endodoncia</h3>
+        <p>Tratamiento de conducto con tecnología que minimiza las molestias.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="turnos" id="turnos">
+    <div class="section-head">
+      <p class="kicker">Turnos</p>
+      <h2>Pedí tu turno en 3 pasos</h2>
+      <p class="section-sub">Elegí especialidad, fecha y horario. Confirmamos por WhatsApp o email al instante.</p>
+    </div>
+
+    <div class="booking-card">
+
+      <div class="booking-step">
+        <span class="step-label">01 · Especialidad</span>
+        <div class="chip-row" id="spec-row"></div>
+      </div>
+
+      <div class="booking-step">
+        <span class="step-label">02 · Fecha</span>
+        <div class="date-row" id="date-row"></div>
+      </div>
+
+      <div class="booking-step">
+        <span class="step-label">03 · Horario</span>
+        <p class="avail-hint" id="avail-hint"></p>
+        <div class="slot-grid" id="slot-grid"></div>
+      </div>
+
+      <div class="booking-summary" id="booking-summary" hidden>
+        <p class="summary-text" id="summary-text"></p>
+        <div class="summary-actions">
+          <a class="btn btn-solid" id="confirm-whatsapp" href="#" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
+          <a class="btn btn-line" id="confirm-email" href="#">Confirmar por email</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="equipo" id="equipo">
+    <div class="section-head">
+      <p class="kicker">Equipo</p>
+      <h2>Profesionales de confianza</h2>
+    </div>
+    <div class="team-grid">
+      <article class="team-card">
+        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=500&q=75&auto=format&fit=crop" alt="Dra. odontóloga">
+        <h3>Dra. Marina Ferreyra</h3>
+        <p>Odontología general y estética</p>
+      </article>
+      <article class="team-card">
+        <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=500&q=75&auto=format&fit=crop" alt="Dr. ortodoncista">
+        <h3>Dr. Lucas Ibarra</h3>
+        <p>Ortodoncia</p>
+      </article>
+      <article class="team-card">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=75&auto=format&fit=crop" alt="Dra. especialista en endodoncia">
+        <h3>Dra. Carolina Sosa</h3>
+        <p>Endodoncia</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <div class="contacto-inner">
+      <div class="contacto-copy">
+        <p class="kicker">Contacto</p>
+        <h2>¿Tenés dudas antes de tu turno?</h2>
+        <p class="section-sub">Escribinos por redes o por mail, te respondemos en el día.</p>
+        <div class="social-row">
+          <a class="social-btn" href="https://wa.me/5491100000000" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="social-btn" href="https://instagram.com/sonria.odontologia" target="_blank" rel="noopener">Instagram</a>
+          <a class="social-btn" href="https://facebook.com/sonria.odontologia" target="_blank" rel="noopener">Facebook</a>
+          <a class="social-btn" href="mailto:turnos@sonria-odontologia.com">turnos@sonria-odontologia.com</a>
+        </div>
+      </div>
+      <div class="contacto-info">
+        <div class="info-block">
+          <span class="step-label">Dirección</span>
+          <p>Calle Alsina 480, San Carlos de Bolívar</p>
+        </div>
+        <div class="info-block">
+          <span class="step-label">Horario</span>
+          <p>Lunes a viernes, 8:00 a 20:00 hs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="logo"><span class="logo-dot"></span>Sonría</span>
+    <p>San Carlos de Bolívar, Buenos Aires · Demo de sitio para consultorio odontológico</p>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/5491100000000" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true">
+    <path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.23.6 4.32 1.66 6.12L4 29l8.06-1.6a11.98 11.98 0 0 0 3.96.67C22.64 28.07 28 22.67 28 16.05 28 9.43 22.64 3 16.02 3zm0 21.86c-1.3 0-2.57-.24-3.75-.72l-.27-.11-4.78.95.98-4.66-.18-.29a9.7 9.7 0 0 1-1.5-5.19c0-5.4 4.4-9.8 9.8-9.8 5.4 0 9.8 4.4 9.8 9.8 0 5.4-4.4 9.8-9.8 9.8zm5.4-7.33c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.73-1.63-2.03-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/>
+  </svg>
+</a>
+
+<script src="javascript.js"></script>
+</body>
+</html>

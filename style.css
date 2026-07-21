@@ -1,0 +1,388 @@
+/* ============ Tokens ============ */
+:root{
+  --blanco: #fbfbf8;
+  --tinta: #17302d;
+  --tinta-suave: #5c6f6b;
+  --menta: #2f8f7d;
+  --menta-oscura: #226a5d;
+  --menta-clara: #e9f5f1;
+  --coral: #ef8266;
+  --linea: #dfe7e3;
+
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --maxw: 1160px;
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  background: var(--blanco);
+  color: var(--tinta);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a{ color: inherit; }
+img{ max-width: 100%; display: block; }
+
+h1, h2, h3{ margin: 0; font-weight: 700; }
+
+.kicker{
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--menta);
+  margin: 0 0 0.7rem;
+}
+
+/* ============ Buttons ============ */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 0.85rem 1.6rem;
+  border-radius: 100px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+.btn-solid{ background: var(--menta); color: #fff; }
+.btn-solid:hover{ background: var(--menta-oscura); }
+.btn-line{ border-color: var(--linea); color: var(--tinta); background: #fff; }
+.btn-line:hover{ border-color: var(--menta); color: var(--menta); }
+
+/* ============ Header ============ */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(251, 251, 248, 0.9);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--linea);
+}
+.header-inner{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--tinta);
+  margin-right: auto;
+}
+.logo-dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--coral);
+  display: inline-block;
+}
+.main-nav{
+  display: flex;
+  gap: 1.9rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.main-nav a{ text-decoration: none; color: var(--tinta-suave); }
+.main-nav a:hover{ color: var(--menta); }
+
+@media (max-width: 780px){
+  .main-nav{ display: none; }
+  .header-cta{ padding: 0.65rem 1.1rem; font-size: 0.82rem; }
+}
+
+/* ============ Hero ============ */
+.hero{ padding: 3.5rem 1.5rem 5rem; }
+.hero-inner{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.hero-title{
+  font-size: clamp(2.3rem, 5vw, 3.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.hero-sub{
+  color: var(--tinta-suave);
+  font-size: 1.05rem;
+  max-width: 42ch;
+  margin: 1.1rem 0 1.8rem;
+}
+.hero-actions{ display: flex; gap: 0.9rem; flex-wrap: wrap; }
+.hero-stats{
+  display: flex;
+  gap: 2.2rem;
+  margin-top: 2.5rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--linea);
+  flex-wrap: wrap;
+}
+.stat{ display: flex; flex-direction: column; }
+.stat strong{ font-size: 1.5rem; color: var(--menta-oscura); }
+.stat span{ font-size: 0.78rem; color: var(--tinta-suave); margin-top: 0.15rem; }
+
+.hero-media img{
+  border-radius: var(--radius);
+  aspect-ratio: 4/3.4;
+  object-fit: cover;
+}
+
+@media (max-width: 860px){
+  .hero-inner{ grid-template-columns: 1fr; }
+  .hero-media{ order: -1; }
+}
+
+/* ============ Section shell ============ */
+.section-head{
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.section-head h2{ font-size: clamp(1.8rem, 4vw, 2.4rem); letter-spacing: -0.01em; }
+.section-sub{ color: var(--tinta-suave); margin: 0.8rem 0 0; }
+
+/* ============ Especialidades ============ */
+.especialidades{ padding: 5.5rem 0; background: var(--menta-clara); }
+.spec-grid{
+  max-width: var(--maxw);
+  margin: 3rem auto 0;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.4rem;
+}
+.spec-card{
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1.8rem 1.6rem;
+  border: 1px solid var(--linea);
+}
+.spec-icon{
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  background: var(--menta-clara);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+.spec-card h3{ font-size: 1.1rem; margin-bottom: 0.5rem; }
+.spec-card p{ color: var(--tinta-suave); font-size: 0.9rem; margin: 0; }
+
+/* ============ Turnos ============ */
+.turnos{ padding: 5.5rem 0; }
+.booking-card{
+  max-width: 640px;
+  margin: 3rem auto 0;
+  padding: 0 1.5rem;
+}
+.booking-step{
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--linea);
+}
+.step-label{
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--menta);
+  margin-bottom: 0.9rem;
+}
+
+.chip-row, .date-row{
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  padding-bottom: 0.3rem;
+}
+.chip{
+  flex-shrink: 0;
+  padding: 0.6rem 1.05rem;
+  border-radius: 100px;
+  border: 1.5px solid var(--linea);
+  background: #fff;
+  color: var(--tinta);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.chip:hover{ border-color: var(--menta); }
+.chip.is-active{ background: var(--menta); border-color: var(--menta); color: #fff; }
+
+.date-pill{
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.6rem 0.9rem;
+  border: 1.5px solid var(--linea);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--tinta);
+  font-family: var(--font-body);
+  cursor: pointer;
+  min-width: 60px;
+}
+.date-pill span{ font-size: 0.66rem; text-transform: uppercase; color: var(--tinta-suave); font-weight: 600; }
+.date-pill strong{ font-size: 1.1rem; }
+.date-pill:hover{ border-color: var(--menta); }
+.date-pill.is-active{ background: var(--menta); border-color: var(--menta); color: #fff; }
+.date-pill.is-active span{ color: #fff; opacity: 0.85; }
+
+.avail-hint{ font-size: 0.85rem; color: var(--tinta-suave); margin: -0.3rem 0 0.9rem; }
+
+.slot-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 0.6rem;
+}
+.slot-btn{
+  padding: 0.65rem 0.4rem;
+  border: 1.5px solid var(--linea);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--tinta);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  align-items: center;
+}
+.slot-btn small{ font-size: 0.64rem; font-weight: 500; color: var(--tinta-suave); }
+.slot-btn:hover:not(:disabled){ border-color: var(--menta); }
+.slot-btn.is-active{ background: var(--menta); border-color: var(--menta); color: #fff; }
+.slot-btn.is-active small{ color: #fff; opacity: 0.85; }
+.slot-btn:disabled{ opacity: 0.4; cursor: not-allowed; text-decoration: line-through; }
+
+.booking-summary{
+  margin-top: 1.5rem;
+  padding: 1.3rem 1.4rem;
+  border: 1.5px solid var(--menta);
+  border-radius: var(--radius);
+  background: var(--menta-clara);
+}
+.summary-text{ margin: 0 0 1.05rem; font-size: 0.95rem; }
+.summary-actions{ display: flex; gap: 0.8rem; flex-wrap: wrap; }
+
+@media (max-width: 480px){
+  .summary-actions{ flex-direction: column; }
+  .summary-actions .btn{ width: 100%; }
+}
+
+/* ============ Equipo ============ */
+.equipo{ padding: 5.5rem 0; background: var(--menta-clara); }
+.team-grid{
+  max-width: var(--maxw);
+  margin: 3rem auto 0;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.team-card{ text-align: center; }
+.team-card img{
+  border-radius: var(--radius);
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.team-card h3{ font-size: 1.05rem; }
+.team-card p{ color: var(--tinta-suave); font-size: 0.88rem; margin: 0.2rem 0 0; }
+
+/* ============ Contacto ============ */
+.contacto{ padding: 5.5rem 0; }
+.contacto-inner{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+}
+.contacto-inner h2{ font-size: clamp(1.7rem, 4vw, 2.2rem); }
+.social-row{ display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.8rem; }
+.social-btn{
+  padding: 0.65rem 1.1rem;
+  border: 1.5px solid var(--linea);
+  border-radius: 100px;
+  text-decoration: none;
+  color: var(--tinta);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.social-btn:hover{ border-color: var(--menta); color: var(--menta-oscura); }
+
+.contacto-info{ display: flex; flex-direction: column; gap: 1.5rem; }
+.info-block p{ margin: 0; color: var(--tinta-suave); }
+
+@media (max-width: 800px){
+  .contacto-inner{ grid-template-columns: 1fr; }
+}
+
+/* ============ Footer ============ */
+.site-footer{ border-top: 1px solid var(--linea); padding: 2rem 1.5rem; }
+.footer-inner{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  color: var(--tinta-suave);
+}
+.footer-inner .logo{ font-size: 1rem; margin-right: 0; }
+
+/* ============ Botón flotante de WhatsApp ============ */
+.whatsapp-float{
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(23, 48, 45, 0.28);
+  z-index: 60;
+  transition: transform 0.15s ease;
+}
+.whatsapp-float:hover{ transform: scale(1.06); }
+
+@media (max-width: 480px){
+  .whatsapp-float{ width: 50px; height: 50px; bottom: 1.1rem; right: 1.1rem; }
+}
